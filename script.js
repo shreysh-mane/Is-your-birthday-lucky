@@ -6,6 +6,11 @@ const checkAns = document.querySelector("#check__ans");
 const calLuck = () => {
   let arr = dateInput.value.replaceAll("-", "");
   let luckyNo = noInput.value;
+  if (!(arr && luckyNo)) {
+    checkAns.textContent = "Please provide Inputs";
+    return;
+  }
+
   let sum = 0;
   let message = "";
   for (dob of arr) {
